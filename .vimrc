@@ -1,6 +1,6 @@
 syntax on
 filetype on
-
+filetype plugin on
 set noerrorbells
 set tabstop=2 softtabstop=2
 set shiftwidth=2
@@ -31,6 +31,7 @@ Plug 'gruvbox-community/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'gryf/pylint-vim'
 Plug 'preservim/nerdtree'
+Plug 'preservim/nerdcommenter'
 
 call plug#end()
 
@@ -60,7 +61,7 @@ autocmd BufReadPost * if @% !~# '\.git[\/\\]COMMIT_EDITMSG$' && line("'\"") > 1 
 map <C-f> <Esc><Esc>:Files<CR>
 
 map <C-q> <Esc><Esc>gg=G<CR>
-
+map <C-\> <plug>NERDCommenterToggle
 map <C-f> :NERDTreeToggle<CR>
 autocmd StdinReadPre * let s:std_in=1
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
