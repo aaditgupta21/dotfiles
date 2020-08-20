@@ -30,8 +30,9 @@ Plug 'sheerun/vim-polyglot'
 Plug 'gruvbox-community/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'gryf/pylint-vim'
-Plug 'preservim/nerdtree'
 Plug 'preservim/nerdcommenter'
+Plug 'junegunn/fzf', { 'do': { -> fzfinstall()  } }
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
@@ -40,7 +41,8 @@ set background=dark
 set termguicolors
 
 
-let g:coc_disable_startup_warning = 1
+
+" let g:coc_disable_startup_warning = 1
 let g:onedark_termcolors=256
 
 
@@ -62,8 +64,5 @@ map <C-f> <Esc><Esc>:Files<CR>
 
 map <C-q> <Esc><Esc>gg=G<CR>
 map <C-\> <plug>NERDCommenterToggle
-map <C-f> :NERDTreeToggle<CR>
-autocmd StdinReadPre * let s:std_in=1
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 autocmd FileType javascript set formatprg=prettier\ --stdin
-let g:NERDTreeIgnore = ['^node_modules$']
+
