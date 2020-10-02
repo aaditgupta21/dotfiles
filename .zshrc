@@ -12,6 +12,8 @@ alias dow="cd ~/Downloads/"
 alias ls="exa"
 alias tree="exa -a --tree"
 alias aeacus-build-linux-production="go build -ldflags '-s -w ' -o ./aeacus ./src; go build -ldflags '-w -s' -tags phocus -o  ./phocus ./src"
+alias vim="nvim"
+alias cat="batcat"
 export PATH=$PATH:~/.local/bin
 #pkl to txt file
 pkl() (
@@ -76,3 +78,5 @@ fi
 # Enhanced form of menu completion called `menu selection'
 zmodload -i zsh/complist
 source /home/aadit/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+export GPG_TTY=$(tty)
+
